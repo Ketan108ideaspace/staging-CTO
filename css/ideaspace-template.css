@@ -1,0 +1,978 @@
+@charset "utf-8";
+/* CSS Document */
+/*font-family: 'Overpass', sans-serif;*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+menu,
+nav,
+section,
+summary,
+div {
+    display: block;
+    box-sizing: border-box;
+}
+audio,
+canvas,
+progress,
+video {
+    display: inline-block;
+    vertical-align: baseline;
+}
+body {
+    overflow-x: hidden;
+    line-height: 1;
+    font-size: 16px;
+   font-family: 'Overpass', sans-serif;
+    font-weight: 400;
+    color: #3c3c3c;
+    /* change color as per theme*/
+}
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+a {
+    background-color: transparent;
+    color: #0f6d9e;
+}
+a:active,
+a:hover {
+    outline: 0;
+}
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+mark {
+    background: #ff0;
+    color: #000;
+}
+small {
+    font-size: 80%;
+}
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+img {
+    border: 0;
+}
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+pre {
+    overflow: auto;
+}
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+a.skip-content {
+    font-size: 0.875em;
+    height: 1px;
+    left: 30px;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+a.skip-content:hover {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+a.skip-content:visited {
+    height: 1px;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+}
+a.skip-content:active {
+    height: auto;
+    position: static;
+    width: auto;
+}
+a.skip-content:focus {
+    height: auto;
+    padding: 10px;
+    position: static;
+    width: auto;
+}
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    /* 1 */
+    
+    font: inherit;
+    /* 2 */
+    
+    margin: 0;
+    /* 3 */
+    
+    padding: 0;
+    border: none;
+}
+.back-to-top {
+    background: rgba(0, 0, 0, 0) url("../images/icons/back-to-top.png") no-repeat scroll 0 0;
+    bottom: 50px;
+    display: block;
+    height: 54px;
+    position: fixed;
+    right: 50px;
+    text-indent: -9999px;
+    width: 55px;
+    z-index: 9;
+}
+.back-to-top:hover {
+    /*background: rgba(0, 0, 0, 0) url("images/icons/back-to-top-hover.png") no-repeat scroll 0 0;*/
+    
+    opacity: .6;
+}
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+
+button {
+    overflow: visible;
+}
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+
+button,
+select {
+    text-transform: none;
+}
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+
+button,
+html input[type="button"],
+/* 1 */
+
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */
+    
+    cursor: pointer;
+    /* 3 */
+}
+/**
+ * Re-set default cursor for disabled elements.
+ */
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+
+input {
+    line-height: normal;
+}
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    
+    padding: 0;
+    /* 2 */
+}
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    /* 2 */
+    
+    box-sizing: content-box;
+}
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+/**
+ * Define consistent border, margin, and padding.
+ */
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+
+legend {
+    border: 0;
+    /* 1 */
+    
+    padding: 0;
+    /* 2 */
+}
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+
+textarea {
+    overflow: auto;
+}
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+
+optgroup {
+    font-weight: bold;
+}
+strong {
+    font-weight: 600;
+}
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+td,
+th {
+    padding: 0;
+}
+.display-block {
+    display: block;
+}
+.display-inline {
+    display: inline-block;
+}
+.display-none {
+    display: none;
+}
+/*Heading base style with Golden Ratio*/
+
+h1,
+h2,
+h3 {
+    font-weight: 400;
+    margin-bottom: .5em
+}
+h4,
+h5 {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+h6 {
+    font-weight: 700;
+     margin-bottom: 5px;
+}
+h4,
+h5,
+h6 {
+    clear: both
+}
+aside,
+article,
+.radio-group label,
+.radio-group .styledRadio,
+.radio-group .styledCheckbox,
+.main-content-inside .content-area-inside img.alignleft,
+.entry-content img.alignleft,
+.main-content-inside .content-area-inside a img.alignleft,
+.entry-content a img.alignleft {
+    float: left;
+}
+article {
+    padding: 20px 0px;
+}
+aside {
+    padding: 20px 0px;
+}
+/* Inside page content area styles  */
+
+main p,
+p {
+    font-size:0.875em;
+    line-height: 1.57;
+    margin-bottom: 20px;
+}
+.content-area-index h1, .content-area-inside h1 {
+    font-size: 1.25em;
+    line-height: 1.4em;
+	color: #0b4563;
+}
+.content-area-index h2{
+    color: #0f6d9e;
+    font-size:.875em;
+    font-weight:600;
+	 letter-spacing: 0px;
+}
+.content-area-inside h2 {
+    color: #0f6d9e;
+    font-size: .875em;
+    font-weight: 400;
+	 letter-spacing: 0px;
+}
+.content-area-index h3 {
+    font-size: 1em;
+    line-height: 1.2em;
+    font-weight: 600;
+	color:#0e78af;
+}
+.content-area-inside h3 {
+    font-size:0.8125em;
+    line-height: 1.2em;
+    font-weight: 600;
+	color:#0b4563;
+}
+.content-area-index h4 {
+    font-size: .875em;
+    line-height: 1.2em;
+	color: #0b4563;
+}
+.content-area-inside h4 {
+    font-size: .875em;
+    line-height: 1.2em;
+	color: #0b4563;
+}
+.content-area-index h5{
+    font-size: .875em;
+    line-height: 1.3em;
+	color: #0b4563;
+}
+.content-area-inside h5 {
+    font-size: .8125em;
+    line-height: 1.3em;
+	color: #0b4563;
+}
+.content-area-index h6 {
+    font-size: .65em;
+    line-height: 1.3em;
+	color: #0b4563;
+}
+.content-area-inside h6 {
+    font-size: .875em;
+    line-height: 1.3em;
+	color: #0b4563;
+}
+.content-area-index p, .content-area-inside p,
+aside p,
+aside ul {
+    margin-bottom: 15px;
+}
+.content-area-inside p,
+aside p,
+aside ul li,
+aside ol li {
+    font-size: .875em;
+    line-height: 1.79;
+    color: #505050;
+}
+aside ul li .facebook-content p {
+    font-size: inherit;
+}
+.content-area-inside p a,
+.content-area-inside li a {
+    text-decoration: none;
+    color: #0f6d9e
+}
+/* change color as per theme*/
+
+aside a {
+    text-decoration: none;
+    color: #0f6d9e
+}
+/* change color as per theme*/
+
+aside a:hover,
+.content-area-inside p a:hover,
+.content-area-inside ul li a:hover {
+    text-decoration: underline;
+}
+aside h2 {
+    font-size: 1em;
+    line-height: 1.1em;
+}
+aside h3 {
+    font-size: 1.25em;
+    line-height: 1.1em;
+    font-weight: 700
+}
+aside h4 {
+    font-size: .875em;
+    line-height: 1.1em;
+    font-weight: 400
+}
+aside h5 {
+    font-size: .65;
+    line-height: 1.3em;
+}
+aside h6 {
+    font-size: .65em;
+    line-height: 1.3em;
+}
+aside h2,
+aside h3,
+aside h4,
+aside h5,
+aside h6 {
+    margin-bottom: 15px
+}
+.main-content-inside {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+aside.sidebar-left,
+aside.sidebar-right {
+    max-width: 100%;
+    width: 100%
+}
+aside.sidebar-left {
+    padding-right: 20px;
+}
+aside.sidebar-right {
+    padding-left: 0px;
+}
+.content-area-inside {
+    background: #fff;
+    width: 100%
+}
+.main-content-inside .content-area-inside.two-column {
+    background: #fff;
+    max-width: 475px;
+    width: 100%
+}
+aside ul,
+.content-area-inside ul {
+    list-style: none;
+    list-style-position: inside;
+    margin-bottom: 1em;
+}
+aside ul li,
+.content-area-inside li,
+.content-area-inside ol li {
+    font-size: .875em;
+    line-height: 1.43;
+}
+/*aside ul li:last-child, 
+.main-content-inside .content-area-inside ul li:last-child{ font-size: inherit; margin-bottom:5px;}*/
+
+.content-area-inside li {
+    background-image: url(../images/bg/bullets-bg.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 8px;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+.main-content-inside .content-area-inside ol li {
+    margin-bottom: 15px;
+    margin-left: 15px;
+}
+/* Assuming in content area list elements should have bullets when client add content by default. Change bullet image and it's path as per the design. */
+
+.main-content-inside .content-area-inside ul li ul {
+    margin: 5px 0 10px 10px;
+}
+.main-content-inside .content-area-inside li li,
+.main-content-inside .content-area-inside ol li li {
+    font-size: inherit;
+}
+.main-content-inside .content-area-inside p + img {
+    margin: 5px 20px 20px 0 ;
+}
+aside ul li h4,
+.main-content-inside .content-area-inside li h4 {
+    font-size: inherit;
+    margin-bottom: 5px
+}
+.main-content-inside .content-area-inside .content-area-form {
+    width: 100%;
+}
+.main-content-inside .content-area-inside .content-area-form > div {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 15px;
+}
+.radio-group label {
+    margin-right: 10px;
+}
+.radio-group .styledRadio,
+.radio-group .styledCheckbox {
+    margin-right: 5px;
+}
+input,
+select,
+textarea,
+label {
+    font-size: .875em;
+}
+input[type="text"],
+input[type="email"],
+select,
+textarea {
+
+    line-height: 1.2;
+}
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 96.5%;
+}
+input[type="submit"],
+button {
+    padding: 0 12px;
+    border: 2px solid #0f6d9e;
+    line-height: 1.2em;
+}
+select {
+    width: 100%;
+}
+.select-wrap select {
+    width: 100%;
+    border: none;
+    background: none;
+    padding-bottom: 3px;
+    padding-left: 6px;
+    padding-top: 3px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 32px;
+}
+.select-wrap {
+    width: 100%;
+    overflow: hidden;
+    background-image: url(../images/icons/select-arw.jpg);
+    background-position: 95% 52%;
+    background-repeat: no-repeat;
+    border: 0px solid #686868;
+}
+.select-wrap select option {
+    margin-left: 0px;
+    width: 100%;
+    padding-left: 5px;
+}
+input::-moz-placeholder,
+textarea::-moz-placeholder {
+    color: #fff;
+    opacity: 1
+}
+input:-ms-input-placeholder,
+textarea:-ms-input-placeholder {
+    color: #fff;
+}
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: #fff;
+}
+.main-content-inside .content-area-inside img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+.main-content-inside .content-area-inside img.alignright,
+.entry-content img.alignright {
+    float: right;
+    margin: 10px 0 .7em 1em
+}
+.main-content-inside .content-area-inside img.alignleft,
+.entry-content img.alignleft {
+    margin: 0 20px 15px 0;
+}
+.main-content-inside .content-area-inside img.aligncenter,
+.entry-content img.aligncenter {
+    display: block;
+    margin: 10px auto .7em auto;
+}
+.main-content-inside .content-area-inside img.alignnone,
+.entry-content img.alignnone {
+    float: none;
+    margin:0 0 20px 0;
+}
+.main-content-inside .content-area-inside a img.alignright,
+.entry-content a img.alignright {
+    float: right;
+    margin: 10px 0 .7em 1em
+}
+.main-content-inside .content-area-inside a img.alignleft,
+.entry-content a img.alignleft {
+    margin: 10px 1em .7em 0
+}
+.main-content-inside .content-area-inside a img.aligncenter,
+.entry-content a img.aligncenter {
+    display: block;
+    margin: 10px auto .7em auto;
+}
+.main-content-inside .content-area-inside a img.alignnone,
+.entry-content a img.alignnone {
+    float: none;
+    margin: 0;
+}
+aside h3 i {
+    font-size: 1.1em;
+    color: #4a4a4a
+}
+@media (min-width: 768px) {
+    .content-area-index h1 {
+        font-size: 1.5em;
+        line-height: 1.4em;
+    }
+.content-area-inside h1 {
+        font-size: 1.625em;
+        line-height: 1.4em;
+    }	
+    .content-area-index h2{
+        font-size: 1.625em;
+    }
+	.content-area-inside h2 {
+        font-size: 0.9375em;
+    }
+    .content-area-index h3 {
+        font-size: 1em;
+        line-height: 1.2em;
+        font-weight: 600
+    }
+	.content-area-inside h3 {
+        font-size:0.875em;
+        line-height: 1.2em;
+        font-weight: 600
+    }
+    .content-area-index h4{
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+	.content-area-inside h4 {
+        font-size: .875em;
+        line-height: 1.2em;
+    }
+   .content-area-index h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+	.content-area-inside h5 {
+        font-size: 0.8125em;
+        line-height: 1.3em;
+    }
+    .content-area-index h6{
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+	.content-area-inside h6 {
+        font-size: 0.75em;
+        line-height: 1.3em;
+    }
+    aside h2 {
+        font-size: 1.25em;
+        line-height: 1.1em;
+    }
+    aside h3 {
+        font-size: 1.25em;
+        line-height: 1.1em;
+        font-weight: 700
+    }
+    aside h4 {
+        font-size: .875em;
+        line-height: 1.1em;
+    }
+    aside h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    aside h6 {
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+    .content-area-inside img.alignright,
+    .entry-content img.alignright {
+        float: right;
+        margin: 10px 0 1.25em 1.25em
+    }
+    .content-area-inside img.alignleft,
+    .entry-content img.alignleft {
+        float: left;
+        margin: 0 20px 15px 0;
+    }
+    .content-area-inside img.aligncenter,
+    .entry-content img.aligncenter {
+        display: block;
+        margin: 10px auto .7em auto;
+    }
+    .content-area-inside img.alignnone,
+    .entry-content img.alignnone {
+        float: none;
+        margin:0 0 20px 0;
+    }
+    .content-area-inside a img.alignright,
+    .entry-content a img.alignright {
+        float: right;
+        margin: 10px 0 1.25em 1.25em
+    }
+    .content-area-inside a img.alignleft,
+    .entry-content a img.alignleft {
+        float: left;
+        margin: 10px 1.25em 1.25em 0
+    }
+    .content-area-inside a img.aligncenter,
+    .entry-content a img.aligncenter {
+        display: block;
+        margin: 10px auto .7em auto;
+    }
+    .content-area-inside a img.alignnone,
+    .entry-content a img.alignnone {
+        float: none;
+        margin: 0;
+    }
+    .main-content-inside {
+        padding-top: 0px;
+    }
+    aside.sidebar-left,
+    .main-content-inside .content-area-inside {
+        background: #fff;
+        max-width: 475px;
+        width: 49.4791%
+    }
+    .main-content-inside .content-area-inside.two-column {
+        background: #fff;
+        max-width: 725px;
+        width: 76.47%;
+    }
+    article {
+        padding: 20px 30px;
+    }
+    aside.sidebar-right {
+        padding-left: 0px;
+    }
+    .main-content-inside .content-area-inside .content-area-form.one-third {
+        width: 60%;
+    }
+}
+@media (min-width: 992px) {
+    .content-area-index h1{
+        font-size: 2.25em;
+        line-height: 1.4em;
+    }
+	.main-content-inside h1 {
+        font-size: 1.75em;
+        line-height: 1.4em;
+		font-weight: 600;
+    }	
+    .content-area-index h2{
+        font-size:2em;
+    }
+    .content-area-inside h2 {
+        font-size:1em;
+			font-weight: 600;
+    }	
+    .content-area-index h3{
+        font-size:1.125em;
+        line-height: 1.2em;
+			font-weight: 600
+    }
+.content-area-inside h3 {
+        font-size:0.9375em;
+        line-height: 1.2em;
+			font-weight: 600
+    }	
+    .content-area-index h4 {
+        font-size: 1em;
+        line-height: 1.2em;
+			font-weight: 600;
+    }
+.content-area-inside h4 {
+        font-size: .875em;
+        line-height: 1.2em;
+    }	
+    .content-area-index h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+			
+    }
+.content-area-inside h5 {
+        font-size: 0.8125em;
+        line-height: 1.3em;
+    }	
+    .content-area-index h6 {
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+.content-area-inside h6 {
+        font-size: .75em;
+        line-height: 1.3em;
+    }	
+    aside h2 {
+        font-size: 1.875em;
+        line-height: 1.1em;
+    }
+    aside h3 {
+        font-size: 1.25em;
+        line-height: 1.1em;
+    }
+    aside h4 {
+        font-size: .875em;
+        line-height: 1.1em;
+    }
+    aside h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    aside h6 {
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+    aside.sidebar-right {
+        padding-left: 20px;
+    }
+    aside.sidebar-left,
+    aside.sidebar-right {
+        max-width: 240px;
+        width: 25.9583%
+    }
+    /*aside ul li{margin-bottom:27px}*/
+}
+/*
+@media (min-width: 1200px) {
+    aside.sidebar-right {
+        max-width: 240px;
+        width: 23.9583%
+    }
+    .content-area-index h1, .content-area-inside h1 {
+        font-size: 2.25em;
+        line-height: 1.4em;
+    }
+    .content-area-index h2, .content-area-inside h2 {
+        font-size: 2em;
+    }
+    .content-area-index h3, .content-area-inside h3 {
+        font-size:1.125em;
+        line-height: 1.2em;
+        font-weight: 600
+    }
+    .content-area-index h4, .content-area-inside h4 {
+        font-size: 1em;
+        line-height: 1.2em;
+    }
+    .content-area-index h5, .content-area-inside h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    .content-area-index h6, .content-area-inside h6 {
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+    aside h2 {
+        font-size: 1.875em;
+        line-height: 1.1em;
+    }
+    aside h3 {
+        font-size: 1.25em;
+        line-height: 1.1em;
+    }
+    aside h4 {
+        font-size: .875em;
+        line-height: 1.1em;
+    }
+    aside h5 {
+        font-size: 1em;
+        line-height: 1.3em;
+    }
+    aside h6 {
+        font-size: .875em;
+        line-height: 1.3em;
+    }
+    aside h3 i {
+        font-size: 1.1em;
+        color: #4a4a4a
+    }
+}*/
