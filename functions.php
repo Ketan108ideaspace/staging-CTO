@@ -87,6 +87,28 @@ jQuery(document).ready(function() {
 </script>
 <?php
 }
+
+add_action('acf/input/admin_head', 'my_acf_admin_head');
+
+function my_acf_admin_head() { ?>
+<script type="text/javascript">
+	(function($) {
+		acf.add_action('ready', function(){
+			$('body').on('click', '.acf-repeater .acf-row-handle .acf-icon.-minus', function( e ){
+				return confirm("Are you sure you want to delete this item?");
+			});
+		});
+	})(jQuery);	
+</script>
+<?php }
+
+//-----------------------------------------------------------
+// ACF custom uber styles
+//-----------------------------------------------------------
+function custom_acf_repeater_colors() {
+     wp_enqueue_style( 'acf-uber-styles', get_template_directory_uri() . '/acf-styles.css' );
+}
+add_action('admin_head', 'custom_acf_repeater_colors');
 //theme option code end
 
 function add_excerpt_support_for_pages() {

@@ -17,9 +17,14 @@ global $site_url;
 <?php endif; ?>
 <?php wp_head(); ?>
 </head>
-<body>
+<?php
+	$nvCls = "";
+	if(!is_front_page()) {
+		$nvCls = 'class="index"';
+	}
+?>
+<body <?php echo $nvCls; ?>>
 <div class="mp-pusher" id="mp-pusher">
-	
   <nav id="mp-menu" class="mp-menu">
 	<a href="#" id="close_bt" class="close_bt"><img src="<?php echo get_template_directory_uri(); ?>/images/icons/close-bt.png" alt="mobile menu close" ></a>
     <div class="mp-level">                                
@@ -158,6 +163,8 @@ global $site_url;
   
   </header>
   <!--<div class="banner-curve">-->
+  <?php
+  if(is_front_page()) {?>
   <div id="banner">
       <div class="banner-wrap">
               <picture>
@@ -215,3 +222,4 @@ global $site_url;
   
 		
     </div>
+  <?php } ?>
